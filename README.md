@@ -1,5 +1,7 @@
 <h1 align="center">Java 学习/面试指南</h1>
 
+Java后端技术交流群(限工作一年及以上，群内有免费学习视频和面试资料，**非本仓库作者本人的群**) ：[![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-869815609-red.svg)](https://jq.qq.com/?_wv=1027&k=5QqyxIx) 
+
 <div align="center">  
 <img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3/logo - 副本.png" width=""/>
 </br>
@@ -55,10 +57,10 @@
 
 ## ToDoList(待办清单)
 
-* [x] Java 8 新特性总结
+* [x] [Java 8 新特性总结](https://github.com/Snailclimb/JavaGuide/blob/master/Java/What's%20New%20in%20JDK8/Java8Tutorial.md)
 * [ ] Java 8 新特性详解
 * [ ] Java 多线程类别知识重构
-* [x] BIO,NIO,AIO 总结 
+* [x] [BIO,NIO,AIO 总结 ](https://github.com/Snailclimb/JavaGuide/blob/master/Java/BIO%2CNIO%2CAIO%20summary.md)
 * [ ] Netty 总结
 * [ ] 数据结构总结重构
   
@@ -163,6 +165,7 @@
 
 * [MySQL 学习与面试](https://github.com/Snailclimb/Java_Guide/blob/master/数据存储/MySQL.md)
 * [【思维导图-索引篇】搞定数据库索引就是这么简单](https://github.com/Snailclimb/Java_Guide/blob/master/数据存储/MySQL%20Index.md)
+* [一千行MySQL学习笔记](https://github.com/Snailclimb/JavaGuide/blob/master/数据存储/一千行MySQL命令.md)
 
 ### Redis
 
