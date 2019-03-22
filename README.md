@@ -1,7 +1,4 @@
 <h1 align="center">Java 学习/面试指南</h1>
-
-Java后端技术交流群(限工作一年及以上，群内有免费学习视频和面试资料，**非本仓库作者本人的群**) ：[![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-869815609-red.svg)](https://jq.qq.com/?_wv=1027&k=5QqyxIx) 
-
 <div align="center">  
 <img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3/logo - 副本.png" width=""/>
 </br>
@@ -52,6 +49,8 @@ Java后端技术交流群(限工作一年及以上，群内有免费学习视频
   * [备战面试\(Preparing for an interview\)](#备战面试preparing-for-an-interview)
   * [BATJ真实面经\(BATJ real interview experience\)](#batj真实面经batj-real-interview-experience)
   * [最常见的Java面试题总结\(Summary of the most common Java interview questions\)](#最常见的java面试题总结summary-of-the-most-common-java-interview-questions)
+* [开发常用工具](#开发常用工具)
+  * [Git](#Git)
 * [闲谈](#闲谈)
 * [说明](#说明)
 
@@ -70,7 +69,8 @@ Java后端技术交流群(限工作一年及以上，群内有免费学习视频
 
 * [Java 基础知识回顾](https://github.com/Snailclimb/Java-Guide/blob/master/Java/Java基础知识.md)
 * [J2EE 基础知识回顾](https://github.com/Snailclimb/Java-Guide/blob/master/Java/J2EE基础知识.md)
-* [Java常见关键字总结：static、final、this、super](https://github.com/Snailclimb/Java-Guide/blob/master/Java/final、static、this、super.md) 
+* [Collections 工具类和 Arrays 工具类常见方法](https://github.com/Snailclimb/JavaGuide/blob/master/Java/Basis/Arrays%2CCollectionsCommonMethods.md)
+* [Java常见关键字总结：static、final、this、super](https://github.com/Snailclimb/Java-Guide/blob/master/Java/Basis/final、static、this、super.md) 
 
 ### 集合框架
 
@@ -201,6 +201,12 @@ Java后端技术交流群(限工作一年及以上，群内有免费学习视频
 * [第二周（2018-8-13）](https://github.com/Snailclimb/Java-Guide/blob/master/EssentialContentForInterview/MostCommonJavaInterviewQuestions/第二周(2018-8-13).md)(String和StringBuffer、StringBuilder的区别是什么？String为什么是不可变的？、什么是反射机制？反射机制的应用场景有哪些？......)
 * [第三周（2018-08-22）](https://github.com/Snailclimb/Java-Guide/blob/master/Java/这几道Java集合框架面试题几乎必问.md) （Arraylist 与 LinkedList 异同、ArrayList 与 Vector 区别、HashMap的底层实现、HashMap 和 Hashtable 的区别、HashMap 的长度为什么是2的幂次方、HashSet 和 HashMap 区别、ConcurrentHashMap 和 Hashtable 的区别、ConcurrentHashMap线程安全的具体实现方式/底层具体实现、集合框架底层数据结构总结）
 * [第四周(2018-8-30).md](https://github.com/Snailclimb/Java-Guide/blob/master/EssentialContentForInterview/MostCommonJavaInterviewQuestions/第四周(2018-8-30).md) （主要内容是几道面试常问的多线程基础题。）
+
+## 开发常用工具
+
+### Git
+
+* [Git入门看这一篇就够了](https://github.com/Snailclimb/JavaGuide/blob/master/DevelopCommonTools/GitIntroduce.md)
 
 ## 闲谈  
 
