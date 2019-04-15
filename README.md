@@ -1,6 +1,12 @@
+Java后端技术交流群(限工作一年及以上，架构视频免费领取) ：[![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-869815609-red.svg)](https://jq.qq.com/?_wv=1027&k=5QqyxIx) 
+
+强烈推荐七牛云CEO老许的[架构专栏](#架构)，微信扫描二维码购买后，[加我好友](#联系我)私聊我领取24元返现。129元的课程相当于75入手。
+
 <h1 align="center">Java 学习/面试指南</h1>
 <p align="center">
-<img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3/logo - 副本.png" width=""/>
+<a href="https://github.com/Snailclimb/JavaGuide" target="_blank">
+	<img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3/logo - 副本.png" width=""/>
+</a>
 </p>
 
 <p align="center">
@@ -56,10 +62,8 @@
 - [资料](#资料)
     - [书单](#书单)
     - [Github榜单](#Github榜单)
-- [闲谈](#闲谈)
 - [待办](#待办)
 - [说明](#说明)
-
 
 ## Java
 
@@ -136,7 +140,7 @@
 - [算法总结——几道常见的链表算法题 ](docs/dataStructures-algorithms/几道常见的链表算法题.md)   
 - [剑指offer部分编程题](docs/dataStructures-algorithms/剑指offer部分编程题.md)
 - [公司真题](docs/dataStructures-algorithms/公司真题.md)
-- [回溯算法经典案例之N皇后问题](./dataStructures-algorithms/Backtracking-NQueens.md)
+- [回溯算法经典案例之N皇后问题](docs/dataStructures-algorithms/Backtracking-NQueens.md)
 
 ## 数据库
 
@@ -144,9 +148,10 @@
 
 * [MySQL 学习与面试](docs/database/MySQL.md)
 * [一千行MySQL学习笔记](docs/database/一千行MySQL命令.md)
-* [【思维导图-索引篇】搞定数据库索引就是这么简单](docs/database/MySQL%20Index.md)
+* [MySQL高性能优化规范建议](docs/database/MySQL高性能优化规范建议.md)
+* [搞定数据库索引就是这么简单](docs/database/MySQL%20Index.md)
 * [事务隔离级别(图文详解)](docs/database/事务隔离级别(图文详解).md)
-* [一条sql语句在MySQL中如何执行的](docs/database/一条sql语句在mysql中如何执行的.md)
+* [一条SQL语句在MySQL中如何执行的](docs/database/一条sql语句在mysql中如何执行的.md)
 
 ### Redis
 
@@ -193,10 +198,9 @@
 * [【备战面试1】程序员的简历就该这样写](docs/essential-content-for-interview/PreparingForInterview/程序员的简历之道.md)
 * [【备战面试2】初出茅庐的程序员该如何准备面试？](docs/essential-content-for-interview/PreparingForInterview/interviewPrepare.md)
 * [【备战面试3】7个大部分程序员在面试前很关心的问题](docs/essential-content-for-interview/PreparingForInterview/JavaProgrammerNeedKnow.md)
-* [【备战面试4】Java程序员必备书单](docs/essential-content-for-interview/PreparingForInterview/books.md)
-* [【备战面试5】Github上开源的Java面试/学习相关的仓库推荐](docs/essential-content-for-interview/PreparingForInterview/JavaInterviewLibrary.md)
-* [【备战面试6】如果面试官问你“你有什么问题问我吗？”时，你该如何回答](docs/essential-content-for-interview/PreparingForInterview/如果面试官问你“你有什么问题问我吗？”时，你该如何回答.md)
-* [【备战面试7】美团面试常见问题总结（附详解答案）](docs/essential-content-for-interview/PreparingForInterview/美团面试常见问题总结.md)
+* [【备战面试4】Github上开源的Java面试/学习相关的仓库推荐](docs/essential-content-for-interview/PreparingForInterview/JavaInterviewLibrary.md)
+* [【备战面试5】如果面试官问你“你有什么问题问我吗？”时，你该如何回答](docs/essential-content-for-interview/PreparingForInterview/如果面试官问你“你有什么问题问我吗？”时，你该如何回答.md)
+* [【备战面试6】美团面试常见问题总结（附详解答案）](docs/essential-content-for-interview/PreparingForInterview/美团面试常见问题总结.md)
 
 ### 常见面试题总结
 
@@ -208,6 +212,7 @@
 ### 面经
 
 - [5面阿里,终获offer(2018年秋招)](docs/essential-content-for-interview/BATJrealInterviewExperience/5面阿里,终获offer.md)
+- [蚂蚁金服2019实习生面经总结(已拿口头offer)](docs/essential-content-for-interview/BATJrealInterviewExperience/蚂蚁金服实习生面经总结(已拿口头offer).md)
 
 ## 工具
 
@@ -218,33 +223,28 @@
 ### Docker
 
 * [Docker 入门](docs/tools/Docker.md)
+* [一文搞懂 Docker 镜像的常用操作！](docs/tools/Docker-Image.md)
 
 ## 资料
 
 ### 书单
 
-- [Java程序员必备书单](docs/essential-content-for-interview/PreparingForInterview/books.md)
+- [Java程序员必备书单](docs/data/java-recommended-books.md)
 
 ### Github榜单
 
 - [Java 项目月榜单](docs/github-trending/JavaGithubTrending.md)
-
-## 闲谈  
-
-* [如何提问](docs/chat/如何提问.md) 
-* [选择技术方向都要考虑哪些因素](docs/chat/选择技术方向都要考虑哪些因素.md) 
-* [结束了我短暂的秋招，说点自己的感受](docs/chat/2018%20%E7%A7%8B%E6%8B%9B.md) 
 
 ***
 
 ## 待办
 
 - [x] [Java 8 新特性总结](docs/java/What's%20New%20in%20JDK8/Java8Tutorial.md)
-- [ ] Java 8 新特性详解
-- [ ] Java 多线程类别知识重构
+- [x] [Java 8 新特性详解](docs/java/What's%20New%20in%20JDK8/Java8教程推荐.md)
+- [ ] Java 多线程类别知识重构(---正在进行中---)
 - [x] [BIO,NIO,AIO 总结 ](docs/java/BIO-NIO-AIO.md)
-- [ ] Netty 总结
-- [ ] 数据结构总结重构
+- [ ] Netty 总结(---正在进行中---)
+- [ ] 数据结构总结重构(---正在进行中---)
 
 ## 说明
 
@@ -281,6 +281,13 @@ Markdown 格式参考：[Github Markdown格式](https://guides.github.com/featur
 添加我的微信备注“Github”,回复关键字 **“加群”** 即可入群。
 
 ![我的微信](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-2/JavaGuide.jpg)
+
+
+### 架构
+
+<a href="https://time.geekbang.org/column/intro/166?code=-qJu3VIe2PPcts3jpNEti1EflIaCAZwLkQhd2mF4ESg%3D&utm_term=SPoster" target="_blank">
+	<img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3微信图片_20190411230100.jpg" width="300px"/>
+</a>
 
 ### Contributor
 
