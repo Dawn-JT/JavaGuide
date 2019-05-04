@@ -12,12 +12,13 @@
   <a href="#公众号"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-JavaGuide-lightgrey.svg" alt="公众号"></a>
   <a href="#公众号"><img src="https://img.shields.io/badge/PDF-Java面试突击-important.svg" alt="公众号"></a>
   <a href="#投稿"><img src="https://img.shields.io/badge/support-投稿-critical.svg" alt="投稿"></a>
-<h2 align="center">Special Sponsors</h2>
 </p>
 
+<h2 align="center">Special Sponsors</h2>
+
 <p align="center">
-<a href="https://e.coding.net/?utm_source=JavaGuide" target="_blank">
-  <img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3/Coding Devops.png" width=""/>
+<a href="https://coding.net/?utm_source=JavaGuide" target="_blank">
+  <img src="https://ws1.sinaimg.cn/large/006rNwoDgy1g2dw5gau7nj30eg02vwfr.jpg"/>
  </a>
 </p>
 
@@ -84,17 +85,18 @@
 
 ### 并发
 
-* [并发编程面试必备：synchronized 关键字使用、底层原理、JDK1.6 之后的底层优化以及 和ReenTrantLock 的对比](docs/java/synchronized.md)
+* [Java 并发基础常见面试题总结](docs/java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary.md)
+* [Java 并发进阶常见面试题总结](docs/java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions.md)
+* [并发编程面试必备：synchronized 关键字使用、底层原理、JDK1.6 之后的底层优化以及 和ReentrantLock 的对比](docs/java/synchronized.md)
 * [并发编程面试必备：乐观锁与悲观锁](docs/essential-content-for-interview/面试必备之乐观锁与悲观锁.md)
 * [并发编程面试必备：JUC 中的 Atomic 原子类总结](docs/java/Multithread/Atomic.md)
 * [并发编程面试必备：AQS 原理以及 AQS 同步组件总结](docs/java/Multithread/AQS.md)
-* [BATJ都爱问的多线程面试题](docs/java/Multithread/BATJ都爱问的多线程面试题.md)
 * [并发容器总结](docs/java/Multithread/并发容器总结.md)
 
 ### JVM
 
-* [可能是把Java内存区域讲的最清楚的一篇文章](docs/java/可能是把Java内存区域讲的最清楚的一篇文章.md)
-* [搞定JVM垃圾回收就是这么简单](docs/java/搞定JVM垃圾回收就是这么简单.md)
+* [Java内存区域章](docs/java/可能是把Java内存区域讲的最清楚的一篇文章.md)
+* [JVM垃圾回收](docs/java/搞定JVM垃圾回收就是这么简单.md)
 * [《深入理解Java虚拟机》第2版学习笔记](docs/java/Java虚拟机（jvm）.md)
 
 ### I/O
@@ -210,6 +212,7 @@
 
 - [5面阿里,终获offer(2018年秋招)](docs/essential-content-for-interview/BATJrealInterviewExperience/5面阿里,终获offer.md)
 - [蚂蚁金服2019实习生面经总结(已拿口头offer)](docs/essential-content-for-interview/BATJrealInterviewExperience/蚂蚁金服实习生面经总结(已拿口头offer).md)
+- [2019年蚂蚁金服、头条、拼多多的面试总结](docs/essential-content-for-interview/BATJrealInterviewExperience/2019alipay-pinduoduo-toutiao.md)
 
 ## 工具
 
@@ -279,25 +282,20 @@ Markdown 格式参考：[Github Markdown格式](https://guides.github.com/featur
 
 ![我的微信](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-2/JavaGuide.jpg)
 
-
-### 架构
-
-<a href="https://time.geekbang.org/column/intro/166?code=-qJu3VIe2PPcts3jpNEti1EflIaCAZwLkQhd2mF4ESg%3D&utm_term=SPoster" target="_blank">
-	<img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3微信图片_20190411230100.jpg" width="300px"/>
-</a>
-
 ### Contributor
 
 下面是笔主收集的一些对本仓库提过有价值的pr或者issue的朋友，人数较多，如果你也对本仓库提过不错的pr或者issue的话，你可以加我的微信与我联系。下面的排名不分先后！
 
 
-<a href="https://github.com/spikesp">
-    <img src="https://avatars0.githubusercontent.com/u/12581996?s=460&v=4" width="45px"></a>
 <a href="https://github.com/fanofxiaofeng">
     <img src="https://avatars0.githubusercontent.com/u/3983683?s=460&v=4" width="45px"></a>
+<a href="https://github.com/dongzl">
+    <img src="https://avatars1.githubusercontent.com/u/5917359?s=460&v=4" width="45px"></a>
 <a href="https://github.com/Gene1994">
     <img src="https://avatars3.githubusercontent.com/u/24930369?s=460&v=4" width="45px">
 </a>
+<a href="https://github.com/spikesp">
+    <img src="https://avatars0.githubusercontent.com/u/12581996?s=460&v=4" width="45px"></a>
 <a href="https://github.com/illusorycloud">
     <img src="https://avatars3.githubusercontent.com/u/31980412?s=460&v=4" width="45px">
 </a>
