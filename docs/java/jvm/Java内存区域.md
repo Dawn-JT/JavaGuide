@@ -138,7 +138,7 @@ Java 堆是垃圾收集器管理的主要区域，因此也被称作**GC 堆（G
 
 在 JDK 7 版本及JDK 7 版本之前，堆内存被通常被分为下面三部分：
 
-1. 新生代内存(Young Ceneration)
+1. 新生代内存(Young Generation)
 2. 老生代(Old Generation)
 3. 永生代(Permanent Generation)
 
@@ -178,7 +178,7 @@ JDK 8 版本之后方法区（HotSpot 的永久代）被彻底移除了（JDK1.7
 堆这里最容易出现的就是  OutOfMemoryError 错误，并且出现这种错误之后的表现形式还会有几种，比如：
 
 1. **`OutOfMemoryError: GC Overhead Limit Exceeded`** ： 当JVM花太多时间执行垃圾回收并且只能回收很少的堆空间时，就会发生此错误。
-2. **`java.lang.OutOfMemoryError: Java heap space`** :假如在创建新的对象时, 堆内存中的空间不足以存放新创建的对象, 就会引发`java.lang.OutOfMemoryError: Java heap space` 错误。(和本机物理内存无关，和你配置的对内存大小有关！)
+2. **`java.lang.OutOfMemoryError: Java heap space`** :假如在创建新的对象时, 堆内存中的空间不足以存放新创建的对象, 就会引发`java.lang.OutOfMemoryError: Java heap space` 错误。(和本机物理内存无关，和你配置的内存大小有关！)
 3. ......
 
 ### 2.5 方法区
@@ -215,9 +215,14 @@ JDK 1.8 的时候，方法区（HotSpot 的永久代）被彻底移除了（JDK1
 
 #### 2.5.3 为什么要将永久代 (PermGen) 替换为元空间 (MetaSpace) 呢?
 
-整个永久代有一个 JVM 本身设置固定大小上限，无法进行调整，而元空间使用的是直接内存，受本机可用内存的限制，并且永远不会得到 `java.lang.OutOfMemoryError`。你可以使用 `-XX：MaxMetaspaceSize` 标志设置最大元空间大小，默认值为 unlimited，这意味着它只受系统内存的限制。`-XX：MetaspaceSize` 调整标志定义元空间的初始大小如果未指定此标志，则 Metaspace 将根据运行时的应用程序需求动态地重新调整大小。
+1. 整个永久代有一个 JVM 本身设置固定大小上限，无法进行调整，而元空间使用的是直接内存，受本机可用内存的限制，虽然元空间仍旧可能溢出，但是比原来出现的几率会更小。
+>当你元空间溢出时会得到如下错误： `java.lang.OutOfMemoryError: MetaSpace`
 
-当然这只是其中一个原因，还有很多底层的原因，这里就不提了。
+你可以使用 `-XX：MaxMetaspaceSize` 标志设置最大元空间大小，默认值为 unlimited，这意味着它只受系统内存的限制。`-XX：MetaspaceSize` 调整标志定义元空间的初始大小如果未指定此标志，则 Metaspace 将根据运行时的应用程序需求动态地重新调整大小。  
+
+2. 元空间里面存放的是类的元数据，这样加载多少类的元数据就不由 `MaxPermSize` 控制了, 而由系统的实际可用空间来控制，这样能加载的类就更多了。  
+
+3. 在 JDK8，合并 HotSpot 和 JRockit 的代码时, JRockit 从来没有一个叫永久代的东西, 合并之后就没有必要额外的设置这么一个永久代的地方了。
 
 ### 2.6 运行时常量池
 
@@ -286,7 +291,7 @@ JDK1.4 中新加入的 **NIO(New Input/Output) 类**，引入了一种基于**�
 
 在 Hotspot 虚拟机中，对象在内存中的布局可以分为 3 块区域：**对象头**、**实例数据**和**对齐填充**。
 
-**Hotspot 虚拟机的对象头包括两部分信息**，**第一部分用于存储对象自身的自身运行时数据**（哈希码、GC 分代年龄、锁状态标志等等），**另一部分是类型指针**，即对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个对象是那个类的实例。
+**Hotspot 虚拟机的对象头包括两部分信息**，**第一部分用于存储对象自身的运行时数据**（哈希码、GC 分代年龄、锁状态标志等等），**另一部分是类型指针**，即对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个对象是那个类的实例。
 
 **实例数据部分是对象真正存储的有效信息**，也是在程序中所定义的各种类型的字段内容。
 
@@ -382,8 +387,27 @@ true
 
 ### 4.3 8 种基本类型的包装类和常量池
 
-- **Java 基本类型的包装类的大部分都实现了常量池技术，即 Byte,Short,Integer,Long,Character,Boolean；这 5 种包装类默认创建了数值[-128，127] 的相应类型的缓存数据，但是超出此范围仍然会去创建新的对象。** 为啥把缓存设置为[-128，127]区间？（[参见issue/461](https://github.com/Snailclimb/JavaGuide/issues/461)）性能和资源之间的权衡。
-- **两种浮点数类型的包装类 Float,Double 并没有实现常量池技术。**
+**Java 基本类型的包装类的大部分都实现了常量池技术，即 Byte,Short,Integer,Long,Character,Boolean；前面 4 种包装类默认创建了数值[-128，127] 的相应类型的缓存数据，Character创建了数值在[0,127]范围的缓存数据，Boolean 直接返回True Or False。如果超出对应范围仍然会去创建新的对象。** 为啥把缓存设置为[-128，127]区间？（[参见issue/461](https://github.com/Snailclimb/JavaGuide/issues/461)）性能和资源之间的权衡。
+
+```java
+public static Boolean valueOf(boolean b) {
+    return (b ? TRUE : FALSE);
+}
+```
+
+```java
+private static class CharacterCache {         
+    private CharacterCache(){}
+          
+    static final Character cache[] = new Character[127 + 1];          
+    static {             
+        for (int i = 0; i < cache.length; i++)                 
+            cache[i] = new Character((char)i);         
+    }   
+}
+```
+
+两种浮点数类型的包装类 Float,Double 并没有实现常量池技术。**
 
 ```java
 		Integer i1 = 33;
