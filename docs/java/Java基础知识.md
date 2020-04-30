@@ -1,5 +1,4 @@
 点击关注[公众号](#公众号)及时获取笔主最新更新文章，并可免费领取本文档配套的《Java 面试突击》以及 Java 工程师必备学习资源。
-
 <!-- TOC -->
 
 - [1. 面向对象和面向过程的区别](#1-面向对象和面向过程的区别)
@@ -55,11 +54,12 @@
     - [BIO,NIO,AIO 有什么区别?](#bionioaio-有什么区别)
 - [36. 常见关键字总结:static,final,this,super](#36-常见关键字总结staticfinalthissuper)
 - [37. Collections 工具类和 Arrays 工具类常见方法总结](#37-collections-工具类和-arrays-工具类常见方法总结)
-- [38.深拷贝 vs 浅拷贝](#38-深拷贝-vs-浅拷贝)
+- [38. 深拷贝 vs 浅拷贝](#38-深拷贝-vs-浅拷贝)
 - [参考](#参考)
 - [公众号](#公众号)
 
 <!-- /TOC -->
+
 
 ## 1. 面向对象和面向过程的区别
 
@@ -127,7 +127,7 @@ JRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有�
 
 **总结：**
 
-1. Oracle JDK 大概每 6 个月发一次主要版本，而 OpenJDK 版本大概每三个月发布一次。但这不是固定的，我觉得了解这个没啥用处。详情参见：https://blogs.oracle.com/java-platform-group/update-and-faq-on-the-java-se-release-cadence。
+1. Oracle JDK 大概每 6 个月发一次主要版本，而 OpenJDK 版本大概每三个月发布一次。但这不是固定的，我觉得了解这个没啥用处。详情参见：[https://blogs.oracle.com/java-platform-group/update-and-faq-on-the-java-se-release-cadence](https://blogs.oracle.com/java-platform-group/update-and-faq-on-the-java-se-release-cadence) 。
 2. OpenJDK 是一个参考模型并且是完全开源的，而 Oracle JDK 是 OpenJDK 的一个实现，并不是完全开源的；
 3. Oracle JDK 比 OpenJDK 更稳定。OpenJDK 和 Oracle JDK 的代码几乎相同，但 Oracle JDK 有更多的类和一些错误修复。因此，如果您想开发企业/商业软件，我建议您选择 Oracle JDK，因为它经过了彻底的测试和稳定。某些情况下，有些人提到在使用 OpenJDK 可能会遇到了许多应用程序崩溃的问题，但是，只需切换到 Oracle JDK 就可以解决问题；
 4. 在响应性和 JVM 性能方面，Oracle JDK 与 OpenJDK 相比提供了更好的性能；
@@ -167,6 +167,10 @@ Constructor 不能被 override（重写）,但是可以 overload（重载）,所
 
 ## 10. 重载和重写的区别
 
+> 重载就是同样的一个方法能够根据输入数据的不同，做出不同的处理
+>
+> 重写就是当子类继承自父类的相同方法，输入数据一样，但要做出有别于父类的响应时，你就要覆盖父类方法
+
 #### 重载
 
 发生在同一个类中，方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同。
@@ -175,9 +179,28 @@ Constructor 不能被 override（重写）,但是可以 overload（重载）,所
 
 ![](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/bg/desktopjava核心技术-重载.jpg)
 
+**综上：重载就是同一个类中多个同名方法根据不同的传参来执行不同的逻辑处理。**
+
 #### 重写
 
-重写是子类对父类的允许访问的方法的实现过程进行重新编写,发生在子类中，方法名、参数列表必须相同，返回值范围小于等于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类。另外，如果父类方法访问修饰符为 private 则子类就不能重写该方法。**也就是说方法提供的行为改变，而方法的外貌并没有改变。**
+重写发生在运行期，是子类对父类的允许访问的方法的实现过程进行重新编写。
+
+1. 返回值类型、方法名、参数列表必须相同，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类。
+2. 如果父类方法访问修饰符为 private/final/static 则子类就不能重写该方法，但是被 static 修饰的方法能够被再次声明。
+3. 构造方法无法被重写
+
+**综上：重写就是子类对父类方法的重新改造，外部样子不能改变，内部逻辑可以改变**
+
+**暖心的 Guide 哥最后再来个图标总结一下！**
+
+| 区别点     | 重载方法 | 重写方法                                       |
+| :--------- | :------- | :--------------------------------------------- |
+| 发生范围   |  同一个类   | 子类 中                                     |
+| 参数列表   | 必须修改 | 一定不能修改                                   |
+| 返回类型   | 可修改   | 一定不能修改                                   |
+| 异常       | 可修改   | 可以减少或删除，一定不能抛出新的或者更广的异常 |
+| 访问修饰符 | 可修改   | 一定不能做更严格的限制（可以降低限制）         |
+| 发生阶段   | 编译期   | 运行期                                   |
 
 ## 11. Java 面向对象编程三大特性: 封装 继承 多态
 
@@ -250,6 +273,8 @@ String 中的对象是不可变的，也就可以理解为常量，线程安全�
 
 - **装箱**：将基本类型用它们对应的引用类型包装起来；
 - **拆箱**：将包装类型转换为基本数据类型；
+
+更多内容见：[深入剖析 Java 中的装箱和拆箱](https://www.cnblogs.com/dolphin0520/p/3780005.html)
 
 ## 14. 在一个静态方法内调用一个非静态成员为什么是非法的?
 
@@ -430,7 +455,15 @@ final 关键字主要用在三个地方：变量、方法、类。
 
 ### Java 异常类层次结构图
 
-![Java异常类层次结构图](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-2/Exception.png)
+![Java异常类层次结构图](./images/java-exception-handling-class-hierarchy-diagram.jpg)
+
+<p style="font-size:13px;text-align:right">图片来自：https://simplesnippets.tech/exception-handling-in-java-part-1/</p>
+
+
+![Java异常类层次结构图](./images/exception-architechture-java.png)
+
+<p style="font-size:13px;text-align:right">图片来自：https://chercher.tech/java-programming/exceptions-java</p>
+
 
 在 Java 中，所有的异常都有一个共同的祖先 java.lang 包中的 **Throwable 类**。Throwable： 有两个重要的子类：**Exception（异常）** 和 **Error（错误）** ，二者都是 Java 异常处理的重要子类，各自都包含大量子类。
 
@@ -534,16 +567,16 @@ Java Io 流共涉及 40 多个类，这些类看上去很杂乱，但实际上�
 ### BIO,NIO,AIO 有什么区别?
 
 - **BIO (Blocking I/O):** 同步阻塞 I/O 模式，数据的读取写入必须阻塞在一个线程内等待其完成。在活动连接数不是特别高（小于单机 1000）的情况下，这种模型是比较不错的，可以让每一个连接专注于自己的 I/O 并且编程模型简单，也不用过多考虑系统的过载、限流等问题。线程池本身就是一个天然的漏斗，可以缓冲一些系统处理不了的连接或请求。但是，当面对十万甚至百万级连接的时候，传统的 BIO 模型是无能为力的。因此，我们需要一种更高效的 I/O 处理模型来应对更高的并发量。
-- **NIO (New I/O):** NIO 是一种同步非阻塞的 I/O 模型，在 Java 1.4 中引入了 NIO 框架，对应 java.nio 包，提供了 Channel , Selector，Buffer 等抽象。NIO 中的 N 可以理解为 Non-blocking，不单纯是 New。它支持面向缓冲的，基于通道的 I/O 操作方法。 NIO 提供了与传统 BIO 模型中的 `Socket` 和 `ServerSocket` 相对应的 `SocketChannel` 和 `ServerSocketChannel` 两种不同的套接字通道实现,两种通道都支持阻塞和非阻塞两种模式。阻塞模式使用就像传统中的支持一样，比较简单，但是性能和可靠性都不好；非阻塞模式正好与之相反。对于低负载、低并发的应用程序，可以使用同步阻塞 I/O 来提升开发速率和更好的维护性；对于高负载、高并发的（网络）应用，应使用 NIO 的非阻塞模式来开发
+- **NIO (Non-blocking/New I/O):** NIO 是一种同步非阻塞的 I/O 模型，在 Java 1.4 中引入了 NIO 框架，对应 java.nio 包，提供了 Channel , Selector，Buffer 等抽象。NIO 中的 N 可以理解为 Non-blocking，不单纯是 New。它支持面向缓冲的，基于通道的 I/O 操作方法。 NIO 提供了与传统 BIO 模型中的 `Socket` 和 `ServerSocket` 相对应的 `SocketChannel` 和 `ServerSocketChannel` 两种不同的套接字通道实现,两种通道都支持阻塞和非阻塞两种模式。阻塞模式使用就像传统中的支持一样，比较简单，但是性能和可靠性都不好；非阻塞模式正好与之相反。对于低负载、低并发的应用程序，可以使用同步阻塞 I/O 来提升开发速率和更好的维护性；对于高负载、高并发的（网络）应用，应使用 NIO 的非阻塞模式来开发
 - **AIO (Asynchronous I/O):** AIO 也就是 NIO 2。在 Java 7 中引入了 NIO 的改进版 NIO 2,它是异步非阻塞的 IO 模型。异步 IO 是基于事件和回调机制实现的，也就是应用操作之后会直接返回，不会堵塞在那里，当后台处理完成，操作系统会通知相应的线程进行后续的操作。AIO 是异步 IO 的缩写，虽然 NIO 在网络操作中，提供了非阻塞的方法，但是 NIO 的 IO 行为还是同步的。对于 NIO 来说，我们的业务线程是在 IO 操作准备好时，得到通知，接着就由这个线程自行进行 IO 操作，IO 操作本身是同步的。查阅网上相关资料，我发现就目前来说 AIO 的应用还不是很广泛，Netty 之前也尝试使用过 AIO，不过又放弃了。
 
 ## 36. 常见关键字总结:static,final,this,super
 
-详见笔主的这篇文章:  https://snailclimb.gitee.io/javaguide/#/docs/java/basic/final,static,this,super
+详见笔主的这篇文章: https://snailclimb.gitee.io/javaguide/#/docs/java/basic/final,static,this,super
 
 ## 37. Collections 工具类和 Arrays 工具类常见方法总结
 
-详见笔主的这篇文章:  https://gitee.com/SnailClimb/JavaGuide/blob/master/docs/java/basic/Arrays,CollectionsCommonMethods.md
+详见笔主的这篇文章: https://gitee.com/SnailClimb/JavaGuide/blob/master/docs/java/basic/Arrays,CollectionsCommonMethods.md
 
 ## 38. 深拷贝 vs 浅拷贝
 
