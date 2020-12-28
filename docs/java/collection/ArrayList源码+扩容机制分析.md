@@ -14,7 +14,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 - `RandomAccess` 是一个标志接口，表明实现这个这个接口的 List 集合是支持**快速随机访问**的。在 `ArrayList` 中，我们即可以通过元素的序号快速获取元素对象，这就是快速随机访问。
 - `ArrayList` 实现了 **`Cloneable` 接口** ，即覆盖了函数`clone()`，能被克隆。
-- `ArrayList` 实现了 java.io.Serializable `接口，这意味着`ArrayList`支持序列化，能通过序列化去传输。
+- `ArrayList` 实现了 `java.io.Serializable `接口，这意味着`ArrayList`支持序列化，能通过序列化去传输。
 
 ### 1.1. Arraylist 和 Vector 的区别?
 
@@ -541,7 +541,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 ### 3.1. 先从 ArrayList 的构造函数说起
 
-**ArrayList 有三种方式来初始化，构造方法源码如下：**
+**（JDK8）ArrayList 有三种方式来初始化，构造方法源码如下：**
 
 ```java
    /**
@@ -596,6 +596,8 @@ public class ArrayList<E> extends AbstractList<E>
 
 细心的同学一定会发现 ：**以无参数构造方法创建 ArrayList 时，实际上初始化赋值的是一个空数组。当真正对数组进行添加元素操作时，才真正分配容量。即向数组中添加第一个元素时，数组容量扩为 10。** 下面在我们分析 ArrayList 扩容时会讲到这一点内容！
 
+> 补充：JDK7 new无参构造的ArrayList对象时，直接创建了长度是10的Object[]数组elementData 。jdk7中的ArrayList的对象的创建**类似于单例的饿汉式**，而jdk8中的ArrayList的对象的创建**类似于单例的懒汉式**。JDK8的内存优化也值得我们在平时开发中学习。
+
 ### 3.2. 一步一步分析 ArrayList 扩容机制
 
 这里以无参构造函数创建的 ArrayList 为例分析
@@ -619,7 +621,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 #### 3.2.2. 再来看看 `ensureCapacityInternal()` 方法
 
-可以看到 `add` 方法 首先调用了`ensureCapacityInternal(size + 1)`
+（JDK7）可以看到 `add` 方法 首先调用了`ensureCapacityInternal(size + 1)`
 
 ```java
    //得到最小扩容量
@@ -635,9 +637,11 @@ public class ArrayList<E> extends AbstractList<E>
 
 **当 要 add 进第 1 个元素时，minCapacity 为 1，在 Math.max()方法比较后，minCapacity 为 10。**
 
+> 此处和后续 JDK8 代码格式化略有不同，核心代码基本一样。
+
 #### 3.2.3. `ensureExplicitCapacity()` 方法
 
-如果调用 `ensureCapacityInternal()` 方法就一定会进过（执行）这个方法，下面我们来研究一下这个方法的源码！
+如果调用 `ensureCapacityInternal()` 方法就一定会进入（执行）这个方法，下面我们来研究一下这个方法的源码！
 
 ```java
   //判断是否需要扩容

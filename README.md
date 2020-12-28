@@ -1,13 +1,13 @@
-👍《JavaGuide 面试突击版》PDF 版本+3 本 PDF Java 学习手册，在公众号 **[JavaGuide](#公众号)** 后台回复“**面试突击**”即可获取。
+👍推荐 [在线阅读](https://snailclimb.gitee.io/javaguide)  (Github 访问速度比较慢可能会导致部分图片无法刷新出来) 
 
-👍 图解操作系统+HTTP+计算机网络的 PDF 资料[点此链接即可下载](https://cowtransfer.com/s/fbed14f0c22a4d)。
+👍推荐 [图解Java+操作系统+HTTP+计算机网络的 PDF 资料](#优质原创PDF资源)
 
-> 一些闲话：
->
-> 1. **JavaGuide 介绍**：关于 JavaGuide 的相关介绍请看：[关于 JavaGuide 的一些说明](https://www.yuque.com/snailclimb/dr6cvl/mr44yt#vu3ok) 。PDF 版本请看：[完结撒花！JavaGuide 面试突击版来啦！](./docs/javaguide面试突击版.md) 。
-> 2. **在线阅读** ：如果 Github 访问速度比较慢或者图片无法刷新出来的话，可以转移到[码云](https://gitee.com/SnailClimb/JavaGuide)查看或者[在线阅读](https://snailclimb.gitee.io/javaguide)。如果你要提交 issue 或者 pr 的话建议到 [Github](https://github.com/Snailclimb/JavaGuide) 提交。
-> 3. **面试专版** ：准备面试的小伙伴可以考虑面试专版：[《Java 面试进阶指南》](https://xiaozhuanlan.com/javainterview?rel=javaguide) ，欢迎加入[我的星球](https://wx.zsxq.com/dweb2/index/group/48418884588288)获取更多实用干货。
-> 4. **阿里云活动** ：阿里云最近在做活动，服务器不到 10 元/月，小伙伴们搭建一个网站提高简历质量。支持国内开源做的比较好的公司！[点击此链接直达活动首页。](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=hf47liqn)
+## 一些闲话：
+
+> 1. **介绍**：关于 JavaGuide 的相关介绍请看：[关于 JavaGuide 的一些说明](https://www.yuque.com/snailclimb/dr6cvl/mr44yt) 。PDF 版本请看：[完结撒花！JavaGuide 面试突击版来啦！](./docs/javaguide面试突击版.md) 。
+> 2. **PDF版本** ： [《JavaGuide 面试突击版》PDF 版本](#公众号) 。
+> 3. **面试专版** ：准备面试的小伙伴可以考虑面试专版：[《Java 面试进阶指南》](https://xiaozhuanlan.com/javainterview?rel=javaguide) ，
+> 4. **知识星球** : 简历指导/Java学习/面试指导/offer选择。欢迎加入[我的知识星球](https://wx.zsxq.com/dweb2/index/group/48418884588288)。
 > 5. **联系我** ：如要进群或者请教问题，请[联系我](#联系我) （备注来自 Github。请直入问题，工作时间不回复）。
 > 6. **转载须知** ：以下所有文章如非文首说明皆为我（Guide哥）的原创，转载在文首注明出处，如发现恶意抄袭/搬运，会动用法律武器维护自己的权益。让我们一起维护一个良好的技术创作环境！⛽️
 
@@ -16,24 +16,21 @@
 	<img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3/logo - 副本.png" width=""/>
 </a>
 </p>
-
 <p align="center">
   <a href="https://snailclimb.gitee.io/javaguide"><img src="https://img.shields.io/badge/阅读-read-brightgreen.svg" alt="阅读"></a>
   <a href="#公众号"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-JavaGuide-lightgrey.svg" alt="公众号"></a>
   <a href="#公众号"><img src="https://img.shields.io/badge/PDF-Java面试突击-important.svg" alt="公众号"></a>
   <a href="#投稿"><img src="https://img.shields.io/badge/support-投稿-critical.svg" alt="投稿"></a>
+  <img src="https://img.shields.io/github/stars/Snailclimb/JavaGuide" alt="投稿">
   <a href="https://xiaozhuanlan.com/javainterview?rel=javaguide"><img src="https://img.shields.io/badge/Java-面试指南-important" alt="投稿"></a>
 </p>
+
 
 <h3 align="center">Sponsor</h3>
 
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="middle">
-        <a href="https://t.1yb.co/5p8J">
-          <img src="./media/sponsor/xiangxue.png" style="margin: 0 auto;width:450px" /></a>
-      </td>  
        <td align="center" valign="middle">
         <a href="https://w.url.cn/s/AS6JeXA">
           <img src="./media/sponsor/kaikeba.png" style="margin: 0 auto;width:450px" /></a>
@@ -41,6 +38,7 @@
     </tr>
   </tbody>
 </table>
+
 
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
@@ -67,15 +65,18 @@
     - [Spring/SpringBoot](#springspringboot)
     - [MyBatis](#mybatis)
     - [Netty (必看 :+1:)](#netty-必看-1)
+    - [ZooKeeper](#zookeeper)
   - [认证授权](#认证授权)
     - [JWT](#jwt)
     - [SSO(单点登录)](#sso单点登录)
   - [分布式](#分布式)
+    - [CAP 理论](#cap-理论)
+    - [BASE 理论](#base-理论)
+    - [Paxos 算法和 Raft 算法](#paxos-算法和-raft-算法)
     - [搜索引擎](#搜索引擎)
     - [RPC](#rpc)
     - [API 网关](#api-网关)
     - [分布式 id](#分布式-id)
-    - [ZooKeeper](#zookeeper)
   - [微服务](#微服务)
   - [高并发](#高并发)
     - [消息队列](#消息队列)
@@ -83,8 +84,6 @@
     - [分库分表](#分库分表)
     - [负载均衡](#负载均衡)
   - [高可用](#高可用)
-    - [CAP 理论](#cap-理论)
-    - [BASE 理论](#base-理论)
     - [限流](#限流)
     - [降级](#降级)
     - [熔断](#熔断)
@@ -98,7 +97,7 @@
   - [待办](#待办)
   - [联系我](#联系我)
   - [捐赠支持](#捐赠支持)
-  - [Contributor](#contributor)
+  - [Contributor](#贡献者)
   - [公众号](#公众号)
 
 <!-- /code_chunk_output -->
@@ -116,9 +115,9 @@
 **重要知识点详解：**
 
 1. [枚举](docs/java/basis/用好Java中的枚举真的没有那么简单.md) （很重要的一个数据结构，用好枚举真的没有那么简单！）
-2. [Java 常见关键字总结：final、static、this、super!](docs/java/basis/Java常见关键字总结:final,static,this,super.md)
-3. [什么是反射机制?反射机制的应用场景有哪些?](docs/java/basis/什么是反射机制?反射机制的应用场景有哪些?.md)
-4. [代理模式详解：静态代理+JDK/CGLIB 动态代理实战](docs/java/basis/静态代理+JDK,CGLIB动态代理实战.md)
+2. [Java 常见关键字总结：final、static、this、super!](docs/java/basis/Java常见关键字总结.md)
+3. [什么是反射机制?反射机制的应用场景有哪些?](docs/java/basis/反射机制.md)
+4. [代理模式详解：静态代理+JDK/CGLIB 动态代理实战](docs/java/basis/代理模式详解.md)
 5. [BIO,NIO,AIO 总结 ](docs/java/basis/BIO,NIO,AIO总结.md)
 
 ### 容器
@@ -176,12 +175,17 @@
 
 ### 数据结构
 
-1. [不了解布隆过滤器？一文给你整的明明白白！](docs/dataStructures-algorithms/data-structure/bloom-filter.md)
-2. [数据结构知识学习与面试](docs/dataStructures-algorithms/数据结构.md)
+- **图解数据结构：**
+  1. [线性数据结构 :数组、链表、栈、队列](docs/dataStructures-algorithms/data-structure/线性数据结构.md)
+  2. [图](docs/dataStructures-algorithms/data-structure/图.md)
+- [不了解布隆过滤器？一文给你整的明明白白！](docs/dataStructures-algorithms/data-structure/bloom-filter.md)
 
 ### 算法
 
-算法这部分内容非常重要，如果你不知道如何学习算法的话，可以看下我写的：[《硬核的算法学习书籍+资源推荐》](docs/dataStructures-algorithms/算法学习资源推荐.md) 。
+算法这部分内容非常重要，如果你不知道如何学习算法的话，可以看下我写的：
+
+- [算法学习书籍+资源推荐](https://www.zhihu.com/question/323359308/answer/1545320858) 。
+- [如何刷Leetcode?](https://www.zhihu.com/question/31092580/answer/1534887374) 
 
 **常见算法问题总结：**
 
@@ -209,7 +213,6 @@
 
 ### Redis
 
-1. [关于缓存的一些重要概念(Redis 前置菜)](docs/database/Redis/some-concepts-of-caching.md)
 2. [Redis 常见问题总结](docs/database/Redis/redis-all.md)
 
 ## 系统设计
@@ -246,6 +249,14 @@
 1. [剖析面试最常见问题之 Netty（上）](https://xiaozhuanlan.com/topic/4028536971)
 2. [剖析面试最常见问题之 Netty（下）](https://xiaozhuanlan.com/topic/3985146207)
 
+#### ZooKeeper
+
+> 前两篇文章可能有内容重合部分，推荐都看一遍。
+
+1. [【入门】ZooKeeper 相关概念总结](docs/system-design/distributed-system/zookeeper/zookeeper-intro.md)
+2. [【进阶】ZooKeeper 相关概念总结](docs/system-design/distributed-system/zookeeper/zookeeper-plus.md)
+3. [【实战】ZooKeeper 实战](docs/system-design/distributed-system/zookeeper/zookeeper-in-action.md)
+
 ### 认证授权
 
 **[《认证授权基础》](docs/system-design/authority-certification/basis-of-authority-certification.md)** 这篇文章中我会介绍认证授权常见概念： **Authentication**,**Authorization** 以及 **Cookie**、**Session**、Token、**OAuth 2**、**SSO** 。如果你不清楚这些概念的话，建议好好阅读一下这篇文章。
@@ -261,7 +272,21 @@
 
 ### 分布式
 
-[分布式相关概念入门](docs/system-design/distributed-system/分布式.md)
+#### CAP 理论
+
+CAP 也就是 Consistency（一致性）、Availability（可用性）、Partition Tolerance（分区容错性） 这三个单词首字母组合。
+
+关于 CAP 的详细解读请看：[《CAP理论解读》](docs/system-design/distributed-system/CAP理论.md)。
+
+#### BASE 理论
+
+**BASE** 是 **Basically Available（基本可用）** 、**Soft-state（软状态）** 和 **Eventually Consistent（最终一致性）** 三个短语的缩写。BASE 理论是对 CAP 中一致性和可用性权衡的结果，其来源于对大规模互联网系统分布式实践的总结，是基于 CAP 定理逐步演化而来的，它大大降低了我们对系统的要求。
+
+关于 CAP 的详细解读请看：[《BASE理论解读》](docs/system-design/distributed-system/BASE理论.md)。
+
+#### Paxos 算法和 Raft 算法
+
+**Paxos 算法**诞生于 1900 年，这是一种解决分布式系统一致性的经典算法 。但是，由于 Paxos 算法非常难以理解和实现，不断有人尝试简化这一算法。到了2013 年才诞生了一个比 Paxos 算法更易理解和实现的分布式一致性算法—**Raft 算法**。
 
 #### 搜索引擎
 
@@ -273,6 +298,7 @@ RPC 让调用远程服务调用像调用本地方法那样简单。
 
 1. [Dubbo 总结：关于 Dubbo 的重要知识点](docs/system-design/distributed-system/rpc/关于Dubbo的重要知识点.md)
 2. [服务之间的调用为啥不直接用 HTTP 而用 RPC？](docs/system-design/distributed-system/rpc/服务之间的调用为啥不直接用HTTP而用RPC.md)
+3. [一款基于 Netty+Kyro+Zookeeper 实现的自定义 RPC 框架](https://github.com/Snailclimb/guide-rpc-framework)
 
 #### API 网关
 
@@ -285,13 +311,11 @@ RPC 让调用远程服务调用像调用本地方法那样简单。
 
 在复杂分布式系统中，往往需要对大量的数据和消息进行唯一标识。比如数据量太大之后，往往需要对进行对数据进行分库分表，分库分表后需要有一个唯一 ID 来标识一条数据或消息，数据库的自增 ID 显然不能满足需求。相关阅读：[为什么要分布式 id ？分布式 id 生成方案有哪些？](docs/system-design/micro-service/分布式id生成方案总结.md)
 
-#### ZooKeeper
+#### 分布式事务
 
-> 前两篇文章可能有内容重合部分，推荐都看一遍。
+**分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。**
 
-1. [【入门】ZooKeeper 相关概念总结](docs/system-design/distributed-system/zookeeper/zookeeper-intro.md)
-2. [【进阶】ZooKeeper 相关概念总结](docs/system-design/distributed-system/zookeeper/zookeeper-plus.md)
-3. [【实战】ZooKeeper 实战](docs/system-design/distributed-system/zookeeper/zookeeper-in-action.md)
+简单的说，就是一次大的操作由不同的小操作组成，这些小的操作分布在不同的服务器上，且属于不同的应用，分布式事务需要保证这些小操作要么全部成功，要么全部失败。本质上来说，分布式事务就是为了保证不同数据库的数据一致性。
 
 ### 微服务
 
@@ -302,7 +326,7 @@ RPC 让调用远程服务调用像调用本地方法那样简单。
 
 #### 消息队列
 
-消息队列在分布式系统中主要是为了解耦和削峰。相关阅读： **[消息队列总结](docs/system-design/data-communication/message-queue.md)** 。
+消息队列在分布式系统中主要是为了解耦和削峰。相关阅读： **[消息队列总结](docs/system-design/distributed-system/message-queue/message-queue.md)** 。
 
 1. **RabbitMQ** : [RabbitMQ 入门](docs/system-design/distributed-system/message-queue/RabbitMQ入门看这一篇就够了.md)
 2. **RocketMQ** : [RocketMQ 入门](docs/system-design/distributed-system/message-queue/RocketMQ.md)、[RocketMQ 的几个简单问题与答案](docs/system-design/distributed-system/message-queue/RocketMQ-Questions.md)
@@ -335,18 +359,6 @@ RPC 让调用远程服务调用像调用本地方法那样简单。
 高可用描述的是一个系统在大部分时间都是可用的，可以为我们提供服务的。高可用代表系统即使在发生硬件故障或者系统升级的时候，服务仍然是可用的 。
 
 相关阅读： **《[如何设计一个高可用系统？要考虑哪些地方？](docs/system-design/high-availability/如何设计一个高可用系统要考虑哪些地方.md)》** 。
-
-#### CAP 理论
-
-CAP 也就是 Consistency（一致性）、Availability（可用性）、Partition Tolerance（分区容错性） 这三个单词首字母组合。
-
-关于 CAP 的详细解读请看：[《CAP理论解读》](docs/system-design/high-availability/CAP理论.md)。
-
-#### BASE 理论
-
-**BASE** 是 **Basically Available（基本可用）** 、**Soft-state（软状态）** 和 **Eventually Consistent（最终一致性）** 三个短语的缩写。BASE 理论是对 CAP 中一致性和可用性权衡的结果，其来源于对大规模互联网系统分布式实践的总结，是基于 CAP 定理逐步演化而来的，它大大降低了我们对系统的要求。
-
-关于 CAP 的详细解读请看：[《BASE理论解读》](docs/system-design/high-availability/BASE理论.md)。
 
 #### 限流
 
@@ -389,7 +401,8 @@ CAP 也就是 Consistency（一致性）、Availability（可用性）、Partiti
 
 1. **Java** ：[JAD 反编译](docs/java/JAD反编译tricks.md)、[手把手教你定位常见 Java 性能问题](./docs/java/手把手教你定位常见Java性能问题.md)
 2. **Git** ：[Git 入门](docs/tools/Git.md)
-3. **Docker** : [Docker 基本概念解读](docs/tools/Docker.md) 、[一文搞懂 Docker 镜像的常用操作！](docs/tools/Docker-Image.md)
+3. **Github** ： [我使用Github 5 年总结了这些骚操作](docs/tools/Github技巧.md)
+4. **Docker** : [Docker 基本概念解读](docs/tools/Docker.md) 、[一文搞懂 Docker 镜像的常用操作！](docs/tools/Docker-Image.md)
 
 ## 面试指南
 
@@ -428,11 +441,14 @@ CAP 也就是 Consistency（一致性）、Availability（可用性）、Partiti
 
 - [x] Netty 总结
 - [ ] 数据结构总结重构
-- [ ] 将 JavaGuide 的基础知识部分抽出来单独弄一个 CS-Guide
 
-### 联系我
+### 优质原创PDF资源
 
-![个人微信](https://cdn.jsdelivr.net/gh/javaguide-tech/blog-images/2020-08/wechat3.jpeg)
+![](https://cdn.jsdelivr.net/gh/javaguide-tech/blog-images-2@main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A/image-20201027160348395.png)
+
+为了避免恶意传播，微信搜“**Github掘金计划**”后台回复 **“006”** 即可获取。
+
+<img src="https://cdn.jsdelivr.net/gh/javaguide-tech/blog-images-2@main/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/qrcode_for_gh_8b9b6034ac19_258.jpg" style="text-align:right"/>
 
 ### 捐赠支持
 
@@ -440,13 +456,16 @@ CAP 也就是 Consistency（一致性）、Availability（可用性）、Partiti
 
 [点击捐赠支持作者](https://www.yuque.com/snailclimb/dr6cvl/mr44yt#vu3ok)
 
+### 联系我
+
+<img src="https://cdn.jsdelivr.net/gh/javaguide-tech/blog-images-3@main/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/31603935587_.pic_hd.jpg" style="zoom:67%;" />
+
 
 ### 公众号
 
-如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号。
+如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号“**JavaGuide**”。
 
-**《Java 面试突击》:** 由本文档衍生的专为面试而生的《Java 面试突击》V2.0 PDF 版本[公众号](#公众号)后台回复 **"Java 面试突击"** 即可免费领取！
-
-**Java 工程师必备学习资源:** 一些 Java 工程师常用学习资源公众号后台回复关键字 **“1”** 即可免费无套路获取。
+**《Java 面试突击》:** 由本文档衍生的专为面试而生的《Java 面试突击》V3.0 PDF 版本[公众号](#公众号)后台回复 **"面试突击"** 即可免费领取！
 
 ![我的公众号](https://cdn.jsdelivr.net/gh/javaguide-tech/blog-images/2020-08/167598cd2e17b8ec.png)
+
